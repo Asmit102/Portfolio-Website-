@@ -636,18 +636,18 @@ header {
     border: 1px solid #00ffff;
 }
 .last-boton{
-    margin-top: 40px;
+    margin-top: 23px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
 }
 .tags {
-    padding: 15px 28px;
+    padding: 9px 19px;
     background: rgba(0, 255, 255, 0.2);
     border-radius: 30px;
     font-size: 16px;
-     color: #fff;
+    color: #fff;
     background: linear-gradient(135deg, #00c6ff, #0072ff);
     border: 1px solid #00ffff;
     cursor: pointer;
@@ -896,6 +896,7 @@ header {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  margin-bottom: 35px;
   gap: 35px;
 }
 
@@ -931,15 +932,19 @@ header {
   transform: translateY(-5px);
 }
 footer{
+    font-size: 13px;
     position: relative;
-    margin-top: 30px;
+    margin-top: 5px;
     bottom: 0%;
     width: 100%;
-    padding: 20px 30px;
+    padding: 10px 30px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: rgba(10, 14, 39, 0.8);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(0, 255, 255, 0.2);
+    gap: 5px;
+    letter-spacing: 1.5px;
 }
