@@ -259,12 +259,12 @@ header {
 .hero{
     display: flex;
     align-items: center;
-    gap: 200px;
+    gap: clamp(30px, 5vw, 200px);
 }
 
 .circle{
-  width: 400px;
-  height: 400px;
+  width: min(400px, 80vw);
+  height: min(400px, 80vw);
   border-radius: 50%;
   background-color: black;
   background-image: url(asmit_photo.png);
@@ -548,7 +548,7 @@ header {
     -webkit-text-fill-color: transparent;
     margin-bottom: 70px;
     margin-top: 50px;
-    font-size:60px;
+    font-size: clamp(32px, 6vw, 60px);
 }
 .project-grid{
     display: grid;
@@ -672,7 +672,7 @@ header {
     background-size: 250% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 60px;
+    font-size: clamp(32px, 6vw, 60px);
     margin-top: -10px;
     margin-bottom: 70px;
 }
@@ -754,7 +754,7 @@ header {
 
 }
 .message-heading{
-  font-size: 60px;
+  font-size: clamp(32px, 6vw, 60px);
   margin-bottom: 60px;
   font-weight: 500px;
   background: linear-gradient(135deg, #f80888 0%, #ffffff 50%, #f50484 100%);
@@ -947,4 +947,157 @@ footer{
     border-top: 1px solid rgba(0, 255, 255, 0.2);
     gap: 5px;
     letter-spacing: 1.5px;
+}
+
+@media (max-width: 768px) {
+
+    /* Header */
+    header{
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Hero Section */
+    .hero{
+        flex-direction: column;
+        gap: 40px;
+        padding: 120px 20px 40px;
+        text-align: center;
+    }
+
+    .main{
+        flex-direction: column;
+    }
+
+    .heading1,
+    .heading2,
+    .description{
+        margin-left: 0;
+    }
+
+    .heading1{
+        font-size: 30px;
+    }
+
+    .heading2{
+        font-size: 28px;
+        justify-content: center;
+    }
+
+    .description{
+        font-size: 18px;
+        margin-top: 30px;
+    }
+
+    .btn1{
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .resume{
+        margin: 20px 0;
+    }
+
+    /* Profile Image */
+    .circle{
+        width: 250px;
+        height: 250px;
+        margin: 0;
+    }
+
+    .hero-text h2{
+        font-size: 32px;
+    }
+
+    .hero-text p{
+        font-size: 18px;
+    }
+
+    /* Education */
+    .timeline-line{
+        display: none;
+    }
+
+    .education-item,
+    .education-item:nth-child(even),
+    .education-item:nth-child(odd){
+        flex-direction: column;
+    }
+
+    .education-content{
+        width: 100%;
+    }
+
+    /* Skills */
+    .skills-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card{
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .skill-process-circle{
+        margin: 15px auto;
+    }
+
+    /* Projects */
+    .project{
+        padding: 50px 20px;
+    }
+
+    .project-title{
+        font-size: 40px;
+    }
+
+    .project-grid{
+        grid-template-columns: 1fr;
+        margin: 0;
+    }
+
+    /* Certificates */
+    .certificate{
+        padding: 50px 20px;
+    }
+
+    .certificate-heading{
+        font-size: 40px;
+    }
+
+    /* Contact */
+    .message-heading{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .contact-form{
+        width: 90%;
+    }
+
+    .contact-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card{
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .social-links{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    footer{
+        text-align: center;
+    }
 }
