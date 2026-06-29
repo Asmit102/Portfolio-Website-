@@ -1125,155 +1125,366 @@ footer{
     letter-spacing: 1.5px;
 }
 
+/*  */
+
+
+
+/* ── Global overflow guard ── */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+ 
+/* ── Remove any element that could push width beyond 100vw ── */
+*, *::before, *::after {
+  max-width: 100%;
+}
+ 
+/* ============================================================
+   HEADER
+   ============================================================ */
+header {
+  padding: 15px 20px;
+  flex-wrap: nowrap;
+}
+ 
+/* ============================================================
+   HERO
+   ============================================================ */
+@media (max-width: 900px) {
+  .hero {
+    padding: 100px 20px 50px;
+    min-height: auto;
+  }
+  .hero-content {
+    flex-direction: column-reverse;   /* photo on top, text below */
+    text-align: center;
+    gap: 30px;
+  }
+  .hero-left {
+    align-items: center;
+    gap: 18px;
+  }
+  .hero-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-right {
+    margin-right: 0;
+  }
+  .description {
+    max-width: 100%;
+    font-size: 16px;
+  }
+  .heading1  { font-size: 32px; }
+  .heading2  { font-size: 24px; justify-content: center; flex-wrap: wrap; }
+  .heading-title { font-size: 22px; text-align: center; }
+  .btn1 { justify-content: center; flex-wrap: wrap; }
+}
+ 
+/* ============================================================
+   ABOUT
+   ============================================================ */
+@media (max-width: 900px) {
+  .intro {
+    padding: 40px 20px;
+  }
+  .about-title {
+    font-size: 28px;
+    letter-spacing: 4px;
+  }
+  .about-desc {
+    font-size: 16px;
+  }
+}
+ 
+/* ============================================================
+   EDUCATION — timeline layout
+   ============================================================ */
+.education-section {
+  padding: 0 16px;
+}
+ 
+/* On mobile hide the pink vertical line that overflows */
 @media (max-width: 768px) {
-
-    /* Header */
-    header{
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .menu{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    /* Hero Section */
-    .hero{
-        flex-direction: column;
-        gap: 40px;
-        padding: 120px 20px 40px;
-        text-align: center;
-    }
-
-    .main{
-        flex-direction: column;
-    }
-
-    .heading1,
-    .heading2,
-    .description{
-        margin-left: 0;
-    }
-
-    .heading1{
-        font-size: 30px;
-    }
-
-    .heading2{
-        font-size: 28px;
-        justify-content: center;
-    }
-
-    .description{
-        font-size: 18px;
-        margin-top: 30px;
-    }
-
-    .btn1{
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
-
-    .resume{
-        margin: 20px 0;
-    }
-
-    /* Profile Image */
-    .circle{
-        width: 250px;
-        height: 250px;
-        margin: 0;
-    }
-
-    .hero-text h2{
-        font-size: 32px;
-    }
-
-    .hero-text p{
-        font-size: 18px;
-    }
-
-    /* Education */
-    .timeline-line{
-        display: none;
-    }
-
-    .education-item,
-    .education-item:nth-child(even),
-    .education-item:nth-child(odd){
-        flex-direction: column;
-    }
-
-    .education-content{
-        width: 100%;
-    }
-
-    /* Skills */
-    .skills-grid{
-        grid-template-columns: 1fr;
-    }
-
-    .skill-card{
-        width: 100%;
-        margin: 20px 0;
-    }
-
-    .skill-process-circle{
-        margin: 15px auto;
-    }
-
-    /* Projects */
-    .project{
-        padding: 50px 20px;
-    }
-
-    .project-title{
-        font-size: 40px;
-    }
-
-    .project-grid{
-        grid-template-columns: 1fr;
-        margin: 0;
-    }
-
-    /* Certificates */
-    .certificate{
-        padding: 50px 20px;
-    }
-
-    .certificate-heading{
-        font-size: 40px;
-    }
-
-    /* Contact */
-    .message-heading{
-        font-size: 40px;
-        text-align: center;
-    }
-
-    .contact-form{
-        width: 90%;
-    }
-
-    .contact-grid{
-        grid-template-columns: 1fr;
-    }
-
-    .contact-card{
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .social-links{
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    footer{
-        text-align: center;
-    }
+  .timeline-line {
+    display: none;
+  }
+ 
+  .timeline-container {
+    padding: 16px 0;
+  }
+ 
+  /* Both odd & even cards: full width, stacked */
+  .education-item,
+  .education-item:nth-child(odd),
+  .education-item:nth-child(even) {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .education-content {
+    width: 100%;            /* fill available width */
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+ 
+  .degree      { font-size: 22px; }
+  .institution { font-size: 16px; }
+  .year        { font-size: 15px; }
+  .edu-btn     { font-size: 13px; padding: 7px 14px; }
+}
+ 
+/* ============================================================
+   SKILLS GRID
+   ============================================================ */
+@media (max-width: 768px) {
+  .skills-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 16px;
+  }
+ 
+  .skill-card {
+    width: 100%;            /* stretch to column width */
+    max-width: 380px;
+    height: auto;           /* let content decide height */
+    min-height: 260px;
+    margin: 0;              /* remove fixed margins */
+    padding: 24px 20px;
+    box-sizing: border-box;
+  }
+ 
+  .skill-process-circle {
+    margin: 12px auto 0;    /* centre the circle */
+  }
+ 
+  .circle-text {
+    margin-top: -44px;
+  }
+ 
+  .section-header {
+    padding: 0 16px;
+  }
+ 
+  .section-title {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+}
+ 
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+@media (max-width: 768px) {
+  .projects {
+    padding: 60px 16px 0;
+  }
+ 
+  .project-grid {
+    grid-template-columns: 1fr;
+    margin: 0 16px;
+    gap: 30px;
+  }
+ 
+  .project-card {
+    height: auto;
+    min-height: 340px;
+  }
+ 
+  /* On mobile make overlay always visible so content is readable */
+  .project-overlay {
+    opacity: 1;
+    background: rgba(10, 14, 39, 0.85);
+    position: relative;     /* comes out of absolute flow */
+    padding: 28px 20px;
+  }
+ 
+  .project-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+  }
+ 
+  .project-number {
+    font-size: 50px;
+  }
+ 
+  .project-info h3 { font-size: 22px; }
+  .project-info p  { font-size: 14px; }
+ 
+  .project-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+ 
+  .last-boton {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+  }
+}
+ 
+/* ============================================================
+   CERTIFICATES
+   ============================================================ */
+@media (max-width: 768px) {
+  .certificate {
+    padding: 60px 16px;
+  }
+ 
+  .certificate-heading {
+    font-size: 36px;
+    margin-bottom: 36px;
+  }
+ 
+  .certificate-grid {
+    grid-template-columns: 1fr;
+    margin: 0;
+    gap: 24px;
+  }
+ 
+  .certificate-card {
+    width: 100%;
+    height: 280px;
+    margin-bottom: 0;
+  }
+ 
+  .certificate-bg h2 {
+    font-size: 52px;
+  }
+ 
+  .certificate-overlay {
+    opacity: 0;             /* keep hover-reveal on touch devices */
+  }
+  /* On touch: show overlay on :active */
+  .certificate-card:active .certificate-overlay {
+    opacity: 0.85;
+  }
+}
+ 
+/* ============================================================
+   CONTACT FORM
+   ============================================================ */
+@media (max-width: 768px) {
+  .contact-me {
+    padding: 0 16px;
+    margin-top: 40px;
+  }
+ 
+  .message-heading {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+ 
+  .contact-form {
+    width: 100%;
+    max-width: 100%;
+  }
+ 
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+ 
+/* ============================================================
+   CONTACT INFO CARDS  ← biggest overflow culprit: fixed 450px
+   ============================================================ */
+.contact-card {
+  /* override the desktop value */
+  width: auto;
+}
+ 
+@media (max-width: 768px) {
+  .cont-title {
+    font-size: 22px;
+    padding: 0 16px;
+    text-align: center;
+  }
+ 
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
+    margin-top: 20px;
+  }
+ 
+  .contact-card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 90px;
+    margin: 0;
+    padding: 16px;
+    border-radius: 16px;
+  }
+ 
+  .contact-info {
+    margin-top: 8px;
+    font-size: 16px;
+    word-break: break-all;
+  }
+ 
+  .contact-icon img {
+    width: 32px;
+    margin-top: -24px;
+  }
+}
+ 
+/* ============================================================
+   SOCIAL LINKS
+   ============================================================ */
+@media (max-width: 768px) {
+  .social-links {
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 0 16px;
+    margin-top: 36px;
+  }
+ 
+  .social-card img {
+    width: 46px;
+    height: 46px;
+  }
+ 
+  .social-card span {
+    font-size: 12px;
+  }
+}
+ 
+/* ============================================================
+   FOOTER
+   ============================================================ */
+@media (max-width: 768px) {
+  footer {
+    font-size: 12px;
+    padding: 12px 16px;
+    text-align: center;
+  }
+}
+ 
+/* ============================================================
+   SMALL PHONES (≤ 400px)
+   ============================================================ */
+@media (max-width: 400px) {
+  .heading1      { font-size: 26px; }
+  .heading2      { font-size: 20px; }
+  .heading-title { font-size: 18px; }
+  .description   { font-size: 14px; }
+  .resume        { font-size: 15px; padding: 8px 20px; }
+  .bottom-left,
+  .btn-contact   { font-size: 15px; padding: 10px 20px; }
+  .about-title   { font-size: 22px; letter-spacing: 3px; }
+  .project-title,
+  .certificate-heading,
+  .message-heading { font-size: 28px; }
 }
