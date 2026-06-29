@@ -26,3 +26,13 @@ menuToggle.addEventListener("click", () => {
         menuIcon.classList.add("fa-bars");
     }
 });
+
+const menuItems = document.querySelectorAll(".menu a");
+
+menuItems.forEach(item => {
+    item.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
+    });
+});

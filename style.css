@@ -3,6 +3,13 @@
     font-family: arial;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior:smooth;
+}
+
+body::-webkit-scrollbar{
+    display:none;
+}
 
 body {
             font-family: 'Arial', sans-serif;
@@ -62,15 +69,7 @@ body {
     right: 70%;
     animation-delay: 6s;
 }
-/*.orb4 {
-    width: 300px;
-    height: 300px;
-    background: #ece938;
-    left: 25%;
-    right: 70%;
-    top:70% ;
-    animation-delay: 2s;
-}*/
+
 @keyframes orbFloat {
     0%, 100% { transform: translate(0, 0) scale(1); }
     25% { transform: translate(50px, -50px) scale(1.1); }
@@ -95,15 +94,6 @@ header {
 #nav-links{
     display: flex;
     list-style: none;
-}
-/* #nav-links.active{
-    display: flex;
-} */
-.menu-toggle{
-    display:none;
-    font-size:24px;
-    color: white;
-    cursor:pointer;
 }
 
 .logo {
@@ -147,7 +137,14 @@ header {
 
 .menu a:hover::before {
     width: 100%;
+}.menu-toggle{
+    display:none;
+    font-size:24px;
+    color: white;
+    cursor:pointer;
 }
+
+
 /*mobile*/
 @media (max-width:768px){
 
@@ -217,23 +214,7 @@ header{
   margin: 0;
   animation: slideInLeft 1s ease;
 }
- 
-.resume {
-  padding: 10px 28px;
-  border-radius: 30px;
-  background: #0a0e27;
-  color: #fff;
-  border: 1.5px solid rgba(255,255,255,0.3);
-  font-size: 18px;
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: 0 0 20px rgba(253, 231, 137, 0.3);
-  transition: box-shadow 0.3s;
-}
-.resume:hover {
-  box-shadow: 0 0 30px rgba(253, 231, 137, 0.6);
-}
- 
+  
 .heading2 {
   font-size: 36px;
   font-weight: bold;
@@ -253,11 +234,11 @@ header{
   overflow: hidden;
   white-space: nowrap;
   border-right: 3px solid transparent;
-  animation: typeErase 4s steps(24) infinite;
+  animation: typeErase 4s steps(28) infinite;
 }
 @keyframes typeErase {
   0%   { width: 0; }
-  40%  { width: 24ch; }
+  40%  { width: 28ch; }
   100% { width: 0; }
 }
  
@@ -281,7 +262,16 @@ header{
   max-width: 560px;
   animation: slideInLeft 1s ease 0.3s both;
 }
- 
+
+.bottom-left,
+.btn-contact,
+.resume{
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn1 {
   display: flex;
   gap: 20px;
@@ -317,6 +307,22 @@ header{
 .btn-contact:hover {
   border-color: #00ffff;
   box-shadow: 0 0 20px rgba(0,255,255,0.3);
+}
+
+.resume {
+  padding: 10px 28px;
+  border-radius: 30px;
+  background: #0a0e27;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  font-size: 18px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(253, 231, 137, 0.3);
+  transition: box-shadow 0.3s;
+}
+.resume:hover {
+  box-shadow: 0 0 30px rgba(253, 231, 137, 0.6);
 }
  
 /* Hero right - circle image */
@@ -384,62 +390,7 @@ header{
   font-weight: 500;
 }
  
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 900px) {
-  .hero {
-    padding: 40px 30px;
-  }
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-  .hero-top {
-    justify-content: center;
-  }
-  .heading2 {
-    justify-content: center;
-    font-size: 28px;
-  }
-  .heading-title {
-    font-size: 26px;
-    text-align: center;
-  }
-  .btn1 {
-    justify-content: center;
-  }
-  .circle {
-    width: min(260px, 70vw);
-    height: min(260px, 70vw);
-  }
-  .intro {
-    padding: 50px 24px;
-  }
-  .about-title {
-    font-size: 32px;
-    letter-spacing: 5px;
-  }
-  .about-desc {
-    font-size: 17px;
-  }
-}
- 
-@media (max-width: 500px) {
-  .heading1 {
-    font-size: 28px;
-  }
-  .heading2 {
-    font-size: 22px;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .heading-title {
-    font-size: 20px;
-  }
-  .description {
-    font-size: 16px;
-  }
-}
+
 /*Education Section*/
 .section-header{
     font-size: 28px;
@@ -454,10 +405,13 @@ header{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
-    letter-spacing: 4px;
+    letter-spacing: 6px;
 }
 .section-subtitle{
-    font-size: 25px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-size: 28px;
     position: relative;
     color: rgba(255, 255, 255, 0.6);
     letter-spacing: 3px;
@@ -466,34 +420,6 @@ header{
 .timeline-container{
     position: relative;
     padding: 40px;
-}
-.timeline-line{
-    position: absolute;
-    margin-left: -600px;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, 
-        transparent 0%,
-        #ff1493 10%,
-        #ff1493 90%,
-        transparent 100%
-    );
-    transform: translateX(-50%);
-}
-.timeline-line::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 20px;
-    background: #ff1493;
-    border-radius: 50%;
-    box-shadow: 0 0 30px #ff1493;
-    animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
@@ -611,18 +537,21 @@ header{
 .education-content p {
     font-size: 18px;
 }
+/* Skills Section*/
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    grid-auto-flow: rows;
+    padding: 0 40px;        /* margin ki jagah padding use karo */
+    justify-items: center;  /* cards center mein rahenge */
+    margin: 0 auto;
+    max-width: 1200px; 
 }
 .skill-card {
     height: 290px;
     width: 280px;
-    margin-top: 80px;
-    margin-left: 35px;
-    margin-bottom: 50px;
+    margin: 20px 0;
+    margin-left: 0;
     background: linear-gradient(90deg,  rgba(0, 245, 255, 0.1), transparent);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.739);
@@ -692,6 +621,7 @@ header{
     margin-bottom: 70px;
     margin-top: 50px;
     font-size: clamp(32px, 6vw, 60px);
+    letter-spacing: 6px;
 }
 .project-grid{
     display: grid;
@@ -818,6 +748,7 @@ header{
     font-size: clamp(32px, 6vw, 60px);
     margin-top: -10px;
     margin-bottom: 70px;
+    letter-spacing: 6px;
 }
 .certificate-grid{
     display: grid;
@@ -826,43 +757,7 @@ header{
     margin-left: 30px;
     margin-right: 30px;
 }
-@media (max-width: 768px){
-  .certificate-grid{
-    grid-template-columns: 1fr;
-  }
-.certificate{
-    padding:80px 20px;
-}
-.certificate-heading{
-    font-size:40px;
-    margin-bottom:40px;
-}
 
-.certificate-grid{
-    grid-template-columns:1fr;
-    margin:0;
-    gap:25px;
-}
-
-.certificate-card{
-    width:100%;
-    height:300px;
-
-}
-
-.certificate-bg h2{
-    font-size:55px;
-    letter-spacing:2px;
-}
-
-.certificate-overlay img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    border-radius:15px;
-}
-
-}
 .certificate-card{
     width: 100%;
     position: relative;
@@ -930,14 +825,14 @@ header{
 
 }
 .message-heading{
-  font-size: clamp(32px, 6vw, 60px);
+  font-size: 30px;
   margin-bottom: 60px;
   font-weight: 500px;
   background: linear-gradient(135deg, #f80888 0%, #ffffff 50%, #f50484 100%);
     background-size: 250% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  letter-spacing: 3px;
+  letter-spacing: 6px;
 }
 .contact-form{
     width: 70%;
@@ -1023,11 +918,6 @@ header{
     cursor: pointer;
 }
 
-@media (max-width: 789px){
-  .contact-grid{
-    grid-template-columns: 1fr;
-  }
-}
 .contact-card{
     height: 100px;
     width: 450px;
@@ -1125,32 +1015,23 @@ footer{
     letter-spacing: 1.5px;
 }
 
-/*  */
-
-
-
-/* ── Global overflow guard ── */
 html, body {
   overflow-x: hidden;
   width: 100%;
 }
  
-/* ── Remove any element that could push width beyond 100vw ── */
+ 
 *, *::before, *::after {
   max-width: 100%;
 }
  
-/* ============================================================
-   HEADER
-   ============================================================ */
+/*HEADER */
 header {
   padding: 15px 20px;
   flex-wrap: nowrap;
 }
  
-/* ============================================================
-   HERO
-   ============================================================ */
+/*HERO*/
 @media (max-width: 900px) {
   .hero {
     padding: 100px 20px 50px;
@@ -1183,9 +1064,7 @@ header {
   .btn1 { justify-content: center; flex-wrap: wrap; }
 }
  
-/* ============================================================
-   ABOUT
-   ============================================================ */
+/* ABOUT */
 @media (max-width: 900px) {
   .intro {
     padding: 40px 20px;
@@ -1199,9 +1078,7 @@ header {
   }
 }
  
-/* ============================================================
-   EDUCATION — timeline layout
-   ============================================================ */
+/*EDUCATION — timeline layout*/
 .education-section {
   padding: 0 16px;
 }
@@ -1238,9 +1115,7 @@ header {
   .edu-btn     { font-size: 13px; padding: 7px 14px; }
 }
  
-/* ============================================================
-   SKILLS GRID
-   ============================================================ */
+/*SKILLS GRID*/
 @media (max-width: 768px) {
   .skills-grid {
     display: flex;
@@ -1278,9 +1153,7 @@ header {
   }
 }
  
-/* ============================================================
-   PROJECTS
-   ============================================================ */
+/* PROJECTS*/
 @media (max-width: 768px) {
   .projects {
     padding: 60px 16px 0;
@@ -1331,9 +1204,7 @@ header {
   }
 }
  
-/* ============================================================
-   CERTIFICATES
-   ============================================================ */
+/* CERTIFICATES */
 @media (max-width: 768px) {
   .certificate {
     padding: 60px 16px;
@@ -1369,9 +1240,7 @@ header {
   }
 }
  
-/* ============================================================
-   CONTACT FORM
-   ============================================================ */
+/* CONTACT FORM*/
 @media (max-width: 768px) {
   .contact-me {
     padding: 0 16px;
@@ -1396,9 +1265,7 @@ header {
   }
 }
  
-/* ============================================================
-   CONTACT INFO CARDS  ← biggest overflow culprit: fixed 450px
-   ============================================================ */
+/*  CONTACT INFO CARDS  ← biggest overflow culprit: fixed 450px */
 .contact-card {
   /* override the desktop value */
   width: auto;
@@ -1440,9 +1307,7 @@ header {
   }
 }
  
-/* ============================================================
-   SOCIAL LINKS
-   ============================================================ */
+/* SOCIAL LINKS */
 @media (max-width: 768px) {
   .social-links {
     flex-wrap: wrap;
@@ -1461,9 +1326,7 @@ header {
   }
 }
  
-/* ============================================================
-   FOOTER
-   ============================================================ */
+/* FOOTER */
 @media (max-width: 768px) {
   footer {
     font-size: 12px;
@@ -1472,9 +1335,7 @@ header {
   }
 }
  
-/* ============================================================
-   SMALL PHONES (≤ 400px)
-   ============================================================ */
+/* SMALL PHONES (≤ 400px)*/
 @media (max-width: 400px) {
   .heading1      { font-size: 26px; }
   .heading2      { font-size: 20px; }
