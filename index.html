@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="grid-background"></div>
@@ -16,7 +18,8 @@
     <div class="orb orb4"></div>
     <header>
         <div class="logo" data-aos="fade-right">Asmit Maurya</div>
-        <ul class="menu">
+    
+        <ul class="menu" id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#academics">Academics</a></li>
@@ -25,38 +28,47 @@
             <li><a href="#achievements">Achievements</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
+         <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
     </header>
 
-    <section class="hero" id="home" > 
-        <div class="hero-content">
-            <div class="main">
-            <div><H3 class="heading1">Hey there!</H3></div>
-            <a href="Resume_Asmit.pdf" class="resume" target="_blank">View Resume</a>
-            </div>
-            <div class="heading2">
-                <div class="heading2-1">I am a- </div>
-                <div class="heading2-2"> CREATIVE DEVELOPER</div>
-            </div>
-            <div class="heading-title"><h1>Welcome to my Portfolio Website</h1></div>
-            <p class="description"> Turning complex ideas into clean, interactive, and impactful web solutions. Explore how creativity and code come together to create something extraordinary.</p>
-            <div class="btn1 " >
-                <button class="bottom-left">👇SCROLL DOWN TO SEE MY WORK 👇</button>
-            </div>
-            </div>
-        </div>
-   </section>
-
-   <section class="intro" id="about">
-    <div class="hero">
-        <div data-aos="fade-right" class="circle"></div>
-          <div data-aos="fade-left" class="hero-text">
-            <H2>ABOUT ME</H2>
-            <P>
-               I’m a Computer Science student at Bundelkhand Institute of Engineering and Technology Jhansi (BIET) and a front-end web developer, passionate about DSA and exploring Artificial Intelligence (AI) field. I enjoy building modern, responsive websites using HTML and CSS while improving my problem-solving skills. Alongside development, I have experience in photo and video editing, allowing me to blend creativity with technology.
-            </P>
-        </div>
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-top">
+        <h3 class="heading1">Hey there!</h3>
+        <a href="Resume_Asmit.pdf" class="resume" id=" resumeBtn
+        " target="_blank">View Resume</a>
+      </div>
+      <div class="heading2">
+        <span class="heading2-1">I am a —</span>
+        <span class="heading2-2">CREATIVE DEVELOPER</span>
+      </div>
+      <h1 class="heading-title">WELCOME TO MY PORTFOLIO</h1>
+      <p class="description">Turning complex ideas into clean, interactive, and impactful web solutions. Explore how creativity and code come together to create something extraordinary.</p>
+      <div class="btn1">
+        <button class="bottom-left">👇 See My Work</button>
+        <button class="btn-contact">Get in Touch</button>
+      </div>
     </div>
-   </section>
+    <div class="hero-right">
+      <div class="circle"></div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== ABOUT SECTION ===== -->
+<section class="intro" id="about">
+  <div class="about-container">
+    <h2 class="about-title">A B O U T &nbsp; M E</h2>
+    <p class="about-desc">
+      I'm a Computer Science student at <span class="highlight">Bundelkhand Institute of Engineering and Technology, Jhansi (BIET)</span> and a front-end web developer, passionate about DSA and exploring Artificial Intelligence. I enjoy building modern, responsive websites using HTML, CSS and JavaScript while improving my problem-solving skills. Alongside development, I have experience in photo and video editing, blending creativity with technology.
+    </p>
+  </div>
+</section>
    <section> 
             <div class="education-section" >
         <div class="section-header" >
@@ -347,12 +359,6 @@
                     </div>
                     <div class="certificate-overlay"><img src="Certificates/certificate4.png" alt=""></div>
                 </div>
-                <!--<div class="certificate-card" data-aos="fade-right">
-                    <div class="certificate-bg">
-                        <h2>Certificate 5</h2>
-                    </div>
-                    <div class="certificate-overlay">
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -437,22 +443,7 @@
     <div class="footer2">&copy; 2026 Asmit Maurya</div>
    </footer>
 
-   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-        offset:100,
-        duration:1000,
-    });
-
-    function resetFormAfterSubmit(e) {
-    setTimeout(() => {
-        e.target.reset();  // Clears all form fields after submission
-    }, 1000); // Delay to allow Formspree to process
-}
-
-    document.getElementById("resumeBtn").addEventListener("click" , function(){
-        window.open("Asmit Maurya Resume.pdf", "_blank");
-    });
-  </script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
